@@ -3,8 +3,6 @@
 A 2-hour guided SystemVerilog lab built as a companion to the lecture
 *Verilog and RTL and useful design patterns*.
 
-**Start here: [`WORKBOOK.md`](WORKBOOK.md)**
-
 ## Quick start
 
 ```bash
