@@ -27,7 +27,6 @@ tb/            testbenches (the grader) — do not edit
 |---|---|
 | `make exN` | build + run exercise N from `rtl/` |
 | `make all` | run all seven |
-| `make waveN` | run and dump `build/exN/exN.vcd` |
 | `make clean` | |
 
 ## Exercises
@@ -41,19 +40,3 @@ tb/            testbenches (the grader) — do not edit
 | 5 | **Packed structs** | `ece180_pkg.sv`, `ex5_struct_alu.sv` |
 | 6 | Interfaces, `modport`, valid/ready | `req_if.sv`, `ex6_chain.sv` |
 | 7 | Elastic buffer, registered status vs lookahead | `ex7_elastic_buffer.sv` |
-
-## For instructors
-
-Lint warnings are promoted to errors (`LATCH`, `WIDTH`, `CASEINCOMPLETE`,
-`BLKSEQ`, `COMBDLY`, `MULTIDRIVEN`) — these are the bug classes the lecture
-covers, and a default flow lets them scroll past as yellow text.
-
-Every testbench is self-checking, prints `EXn PASS`/`FAIL` with specific
-diagnostics, and carries a watchdog so a stalled design reports a timeout
-instead of hanging a terminal. Exercise 6 additionally checks the
-valid-stability protocol rule; exercise 7 instantiates the buffer under both
-ready policies and asserts that lookahead is measurably faster.
-
-Exercises 4 and 5 require edits to `rtl/ece180_pkg.sv` (adding `ALU_XOR` and
-the `zero` field) and will not compile until those are made — deliberately, so
-students have to open the package.
